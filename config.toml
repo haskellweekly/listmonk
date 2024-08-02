@@ -1,0 +1,14 @@
+# https://listmonk.app/docs/configuration/
+
+[app]
+address = "0.0.0.0:9000"
+admin_password = "listmonk"
+admin_username = "listmonk"
+
+[db]
+database = "postgres"
+host = "postgres"
+password = "postgres"
+port = 5432
+ssl_mode = "disable"
+user = "postgres"
