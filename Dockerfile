@@ -1,6 +1,6 @@
 # https://docs.docker.com/reference/dockerfile/
 
-FROM alpine:3.21.0
+FROM alpine:3.21.2
 
 COPY config.toml /root/listmonk/
 
