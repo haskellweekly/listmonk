@@ -7,8 +7,6 @@ primary_region = 'dfw'
 
 [env]
   LISTMONK_app__address = "0.0.0.0:8080"
-  # LISTMONK_app__admin_password = ""
-  LISTMONK_app__admin_username = "listmonk"
   LISTMONK_db__database = "haskellweekly_listmonk"
   LISTMONK_db__host = "haskellweekly-postgres.flycast"
   # LISTMONK_db__password = ""
