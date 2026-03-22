@@ -1,22 +1,8 @@
-# https://docs.docker.com/reference/dockerfile/
+FROM listmonk/listmonk:v6.0.0
 
-FROM alpine:3.23.3
-
-COPY config.toml /root/listmonk/
-
-WORKDIR /root/listmonk
-
-ARG LISTMONK_VERSION=4.1.0
-RUN \
-  set -o errexit -o xtrace; \
-  machine=$( uname -m ); \
-  arch=$( case "$machine" in aarch64) echo arm64;; x86_64) echo amd64;; *) echo "$machine";; esac ); \
-  wget -O listmonk.tgz "https://github.com/knadh/listmonk/releases/download/v$LISTMONK_VERSION/listmonk_${LISTMONK_VERSION}_linux_$arch.tar.gz"; \
-  tar xf listmonk.tgz; \
-  mv listmonk /usr/local/bin/; \
-  listmonk --version
-
+WORKDIR /listmonk
+COPY config.toml .
 CMD \
-  listmonk --idempotent --install --yes && \
-  listmonk --upgrade --yes && \
-  listmonk
+  ./listmonk --idempotent --install --yes && \
+  ./listmonk --upgrade --yes && \
+  ./listmonk
