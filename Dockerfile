@@ -1,4 +1,4 @@
-FROM listmonk/listmonk:v6.1.0
+FROM listmonk/listmonk:v6.2.0
 
 WORKDIR /listmonk
 COPY config.toml .
