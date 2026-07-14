@@ -1,6 +1,12 @@
 app = "listmonk-long-water-4266"
 primary_region = "ord"
 
+[deploy]
+# Runs once per deploy (not on every machine boot) with database access.
+# `--upgrade` only applies migrations newer than the recorded schema
+# version, so it is a no-op except right after a listmonk version bump.
+release_command = "/listmonk/listmonk --upgrade --yes"
+
 [http_service]
 auto_start_machines = true
 auto_stop_machines = true
